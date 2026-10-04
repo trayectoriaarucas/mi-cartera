@@ -235,7 +235,22 @@ export const NewTransactionPage = ({ onBack, defaultType = 'expense' }) => {
       </div>
 
       <div className="space-y-4 flex-1">
-        {/* 1. Importe Grande */}
+        {/* 1. Nombre */}
+        <div className="glass-panel rounded-3xl p-4 border border-slate-800">
+          <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
+            Nombre
+          </label>
+          <input
+            type="text"
+            autoFocus
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Nombre"
+            className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-sm font-semibold text-white placeholder:text-slate-500 focus:outline-none focus:border-slate-600 transition"
+          />
+        </div>
+
+        {/* 2. Importe */}
         <div className="glass-panel rounded-3xl p-4 border border-slate-800">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             Importe
@@ -246,7 +261,6 @@ export const NewTransactionPage = ({ onBack, defaultType = 'expense' }) => {
               type="number"
               step="0.01"
               required
-              autoFocus
               placeholder="0.00"
               value={amountStr}
               onChange={(e) => setAmountStr(e.target.value)}
@@ -355,20 +369,6 @@ export const NewTransactionPage = ({ onBack, defaultType = 'expense' }) => {
               </div>
             </div>
           )}
-        </div>
-
-        {/* 3. Nombre */}
-        <div className="glass-panel rounded-3xl p-4 border border-slate-800">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
-            Nombre
-          </label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Nombre"
-            className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-sm font-semibold text-white placeholder:text-slate-500 focus:outline-none focus:border-slate-600 transition"
-          />
         </div>
 
         {/* 4. Método de pago */}
